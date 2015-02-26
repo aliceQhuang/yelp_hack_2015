@@ -10,7 +10,7 @@ body {
   font:14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
   color:#5f5f5f;
   font-weight:300;
-  background: #626262;
+  background: #F5F5F1;
 }
 
 h6 {
@@ -113,7 +113,7 @@ header {
   width:180px;
   float:left;
   position:fixed;
-  background: #626262; /*pale*/
+  background: #F5F5F1; /*pale*/
 }
 
 header ul {
@@ -200,7 +200,7 @@ footer {
   float:left;
   position:fixed;
   bottom:50px;
-  background:#626262; /*pale*/
+  background:#F5F5F1; /*pale*/
 }
 
 canvas {
