@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>The Yelp Pokedex</title><!--CUSTOM-->
     <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="styleshevet" href="stylesheets/pygment_trac.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   </head>
-  
-  <body>
+
+  <body onload="draw();">
     <div class="wrapper">
       <!--Side/top bar-->
       <header>
@@ -22,27 +22,27 @@
           i18n<br/>
         </p>
       </header>
-      
+
       <!--Main body section-->
       <section>
-        
-        
+
+
         <!--<h6 style='font-size:50px'>Processing Games</h6>-->
         <h2>Welcome to the Yelp Pokedex</h2>
 
+        <canvas id="pokedex" width="640" height="600"></canvas>
 
-        
       </section>
-      
+
       <footer>
         <p>This project is maintained by <a href="https://github.com/aliceQhuang">aliceQhuang</a>, jonathan-tom, brendanzhao.</p>
       </footer>
-      
+
     </div>
-    
+
     <!--Javascript functions-->
     <script src="javascripts/scale.fix.js"></script>
-    <script></script>
-    
+    <script src="javascripts/main.js"></script>
+
   </body>
 </html>
