@@ -15,6 +15,10 @@ def get_everyone():
         return json.loads(f.read())
 
 
+def _verify_key(key):
+    return key in ('name', 'id', 'region', 'type', 'ability', 'evolution.1', 'evolution.2', 'evolution.3', 'move.1', 'move.2', 'move.3', 'move.4')
+
+
 @app.after_request
 def add_header(response):
     # For ajax
@@ -45,7 +49,8 @@ def add():
     body = request.get_json(force=True)
     if body:
         people.insert(body)
-    return body
+    del body['_id']
+    return json.dumps(body)
 
 
 @app.route('/update/<identifier>')
@@ -53,14 +58,13 @@ def update(identifier):
     params = request.args
     adjusted_params = {}
     for k, v in params.iteritems():
-        if k in ('name', 'id', 'region', 'type', 'ability', 'evolution.1', 'evolution.2', 'evolution.3', 'move.1', 'move.2', 'move.3', 'move.4'):
+        if _verify_key(k):
             adjusted_params[k] = v
     for k, v in adjusted_params.iteritems():
         if v:
             people.update({'id': identifier}, {'$set': {k: v}})
         else:
             people.update({'id': identifier}, {'$unset': {k: v}})
-    print params
     return 'asd'
 
 
@@ -70,8 +74,6 @@ def reset():
     everyone = get_everyone()
     people.insert(everyone.values())
     results = people.find()
-    for result in results:
-        print result
     return 'ok'
 
 
