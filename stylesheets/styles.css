@@ -346,7 +346,7 @@ footer {
 .image {
   border-radius: 50%;
   background-size: cover;
-  width: 80%;
+  width: 144px;
   height: 80%;
   margin: 18px auto 0 auto;
 }
