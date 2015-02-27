@@ -162,5 +162,5 @@ $(document).ready(function() {
         return color;
     }
 
-    setInterval(blinkyblinky, 750);
+    setInterval(blinkyblinky, 250);
 });
