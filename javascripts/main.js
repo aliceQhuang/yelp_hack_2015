@@ -15,27 +15,35 @@ $(document).ready(function() {
         $('.image').css("background-image", ("url('images/people/" + id + ".jpg')"));
     }
 
-    var generateHeaderMarkup = function(id, region, type, ability) {
-        return [
-            '<h4 style="font-size:24px">',
-                id,
-            '</h4>',
+    var _addHeaderTags = function() {
+        headerTags = [
+            '<h4 style="font-size:24px"><span id="header-id"></span></h4>',
             '<p>',
                 '<b>Region:&nbsp;&nbsp;</b>',
-                region,
-                'F<br/>',
+                '<span id="header-region"></span><br/>',
                 '<b>Type:&nbsp;&nbsp;</b>',
-                type,
-                '<br/>',
+                '<span id="header-type"></span><br/>',
                 '<b>Ability:&nbsp;&nbsp;</b>',
-                ability,
-                '<br/>',
+                '<span id="header-ability"></span><br/>',
             '</p>'
         ].join('');
+        $('.headers').html(headerTags);
+    }
+
+    var _fillHeaderTags = function(id, region, type, ability) {
+        $('#header-id').text(id);
+        $('#header-region').text(region);
+        $('#header-type').text(type);
+        $('#header-ability').text(ability);
+    }
+
+    var generateHeaderMarkup = function(id, region, type, ability) {
+        _addHeaderTags();
+        _fillHeaderTags(id, region, type, ability);
     }
 
     var fillPokedexList = function(allUsers) {
-        var listMarkup = '<h3>Pokemon</h3>';
+        var listMarkup = '<h3>Pokemon List</h3>';
 
         for (var user in allUsers) {
             if (allUsers.hasOwnProperty(user)) {
@@ -46,7 +54,6 @@ $(document).ready(function() {
                     '</a>',
                     '<br />'
                 ].join(''));
-
             }
         }
 
@@ -56,20 +63,22 @@ $(document).ready(function() {
             var pokemon = $(event.target);
             var user = pokemon.data('user');
             fillPokedexContent(allUsers[user]);
+            alice();
         });
     }
 
     var fillPokedexContent = function(user) {
-        var headerMarkup = generateHeaderMarkup(
+        generateHeaderMarkup(
             user.id,
             user.region,
             user.type,
             user.ability
         )
-
-        $('.headers').html(headerMarkup);
         setPortrait(user.id);
     }
 
-});
+    var alice = function() {
 
+    }
+
+});
