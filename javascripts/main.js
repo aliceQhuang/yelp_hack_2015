@@ -11,6 +11,13 @@ $(document).ready(function() {
         }
     });
 
+    $.ajax({
+        url: 'http://10.255.55.16:19000/count',
+        success: function(result) {
+            renderCounter(result);
+        }
+    });
+
     var setPortrait = function(id) {
         $('.image').css("background-image", ("url('images/people/" + id + ".jpg')"));
     }
@@ -165,4 +172,8 @@ $(document).ready(function() {
     }
 
     setInterval(blinkyblinky, 250);
+
+    var renderCounter = function(count) {
+        $('#counter').text(count);
+    }
 });
