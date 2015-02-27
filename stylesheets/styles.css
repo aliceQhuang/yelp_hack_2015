@@ -291,6 +291,10 @@ footer {
   background-color: #de7b71;
 }
 
+.list-container {
+  padding: 20px;
+}
+
 #pokedex-content {
   width: 65%;
   height: 100%;
@@ -303,24 +307,44 @@ footer {
   height: 30%;
 }
 
+.headers-container {
+  width: 50%;
+  height: 100%;
+  float: left;
+}
+
 .headers {
+  padding: 20px;
+}
+
+.image-container {
   width: 50%;
   height: 100%;
   float: left;
 }
 
 .image {
-  width: 50%;
-  height: 100%;
-  float: left;
+  border-radius: 50%;
+  background-size: cover;
+  width: 80%;
+  height: 80%;
+  margin: 18px auto 0 auto;
 }
 
-.evolution {
+.evolution-container {
   width: 100%;
   height: 20%;
 }
 
-.details {
+.evolution {
+  padding: 20px;
+}
+
+.details-container {
   width: 100%;
   height: 50%;
+}
+
+.details {
+  padding: 20px;
 }
