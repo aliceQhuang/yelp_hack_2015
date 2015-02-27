@@ -35,7 +35,7 @@ $(document).ready(function() {
     }
 
     var fillPokedexList = function(allUsers) {
-        var listMarkup = '<h3>Pokemon</h3>';
+        var listMarkup = '<h3>Pokemon List</h3>';
 
         for (var user in allUsers) {
             if (allUsers.hasOwnProperty(user)) {
