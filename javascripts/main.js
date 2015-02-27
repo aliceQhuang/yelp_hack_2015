@@ -42,16 +42,18 @@ $(document).ready(function() {
 
     var _addEvolutionTags = function(evolution_dict) {
         var evolutionTags = '';
+
         for (var id in evolution_dict) {
             if (id > 1) {
                 evolutionTags = evolutionTags.concat(
-                    '<span style="font-size:40px; color:white;><b>\></b></span>'
+                    '<span style="font-size:40px; color:white;"><b> \> </b></span>'
                 );
             }
             evolutionTags = evolutionTags.concat(
                 '<div class="evolution-image" id="' + evolution_dict[id] + '"></div>'
             );
         }
+
         $('.evolution-image-container').html(evolutionTags);
     }
 
