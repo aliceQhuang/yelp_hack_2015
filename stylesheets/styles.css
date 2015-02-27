@@ -352,12 +352,23 @@ footer {
 }
 
 .evolution-container {
-  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
   height: 20%;
 }
 
-.evolution {
-  padding: 20px;
+.evolution-image-container {
+  text-align: center;
+}
+
+.evolution-image {
+  margin: 20px auto 0 auto;
+  background: blue;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  background-size: cover;
+  display: inline-block;
 }
 
 .details-container {
@@ -372,3 +383,4 @@ footer {
 .subtitle {
   display: inline-block;
 }
+
