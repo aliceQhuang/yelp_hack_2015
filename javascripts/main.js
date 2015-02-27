@@ -18,11 +18,11 @@ $(document).ready(function() {
     var _addHeaderTags = function() {
         headerTags = [
             '<h4 style="font-size:24px"><span id="header-id"></span></h4>',
-            '<b>Region:&nbsp;&nbsp;</b>',
+            '<b>Region:&nbsp;&nbsp;&nbsp;</b>',
             '<span id="header-region"></span><br/>',
-            '<b>Type:&nbsp;&nbsp;</b>',
+            '<b>Type:&nbsp;&nbsp;&nbsp;</b>',
             '<span id="header-type"></span><br/>',
-            '<b>Ability:&nbsp;&nbsp;</b>',
+            '<b>Ability:&nbsp;&nbsp;&nbsp;</b>',
             '<span id="header-ability"></span><br/>',
         ].join('');
         $('.headers').html(headerTags);
@@ -84,8 +84,8 @@ $(document).ready(function() {
         for (var move in moves) {
             if (moves.hasOwnProperty(move)) {
                 moveMarkup = moveMarkup.concat(
-                    '<b>Move ' + move + '</b>',
-                    '<div id="move-' + move + '"></div><br/>'
+                    '<b>Move ' + move + ':</b>&nbsp;&nbsp;&nbsp;',
+                    '<span id="move-' + move + '"></span><br/>'
                 );
             }
         }
