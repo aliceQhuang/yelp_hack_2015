@@ -7,7 +7,7 @@ $(document).ready(function() {
         success: function(result) {
             allUsers = JSON.parse(result);
             fillPokedexList(allUsers);
-            fillPokedexContent(allUsers['jeremy']);
+            fillPokedexContent(allUsers['aliceqh']);
         }
     });
 
@@ -84,7 +84,7 @@ $(document).ready(function() {
         for (var move in moves) {
             if (moves.hasOwnProperty(move)) {
                 moveMarkup = moveMarkup.concat(
-                    '<b>Move ' + move + ':</b>&nbsp;&nbsp;&nbsp;',
+                    '<b>Move ' + move + ':</b>&nbsp;&nbsp;&nbsp;&nbsp;',
                     '<span id="move-' + move + '"></span><br/>'
                 );
             }
@@ -147,8 +147,11 @@ $(document).ready(function() {
         var el = $('blink h6')[0]
         if (el.style.visibility === 'visible') {
             el.style.visibility = 'hidden';
-            el.style.color = getRandomColor()
+            el.style.color = getRandomColor();
+            el.style.transform = 'none';
         } else {
+            var a = Math.random() * 10 - 5;
+            el.style.transform = 'rotate(' + a + 'deg) scale(1.25)';
             el.style.visibility = 'visible';
         }
     }
