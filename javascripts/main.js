@@ -17,7 +17,7 @@ $(document).ready(function() {
 
     var generateHeaderMarkup = function(id, region, type, ability) {
         return [
-            '<h4 style="font-size:24px">',
+            '<h4 style="font-size:26px">',
                 id,
             '</h4>',
             '<p>',
