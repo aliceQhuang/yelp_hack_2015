@@ -42,21 +42,26 @@ $(document).ready(function() {
         _fillHeaderTags(id, region, type, ability);
     }
 
-    var _addEvolutionTags = function() {
-        evolutionTags = [
-            '<div class="evolution-image" id="aliceqh"></div>'
-        ].join('');
+    var _addEvolutionTags = function(evolution_dict) {
+        var evolutionTags = '';
+        for (var id in evolution_dict) {
+            console.log(evolution_dict[id]);
+            evolutionTags = evolutionTags.concat(
+                '<div class="evolution-image" id="' + evolution_dict[id] + '"></div>'
+            );
+        }
         $('.evolution-image-container').html(evolutionTags);
     }
 
-    var _fillEvolutionTags = function() {
-        console.log('yo');
-        $('#aliceqh').css("background-image", ("url('images/people/" + "aliceqh" + ".jpg')"));
+    var _fillEvolutionTags = function(evolution_dict) {
+        for (var id in evolution_dict) {
+            $('#' + evolution_dict[id]).css("background-image", ("url('images/people/" + evolution_dict[id] + ".jpg')"));
+        }
     }
 
-    var generateEvolutionMarkup = function() {
-        _addEvolutionTags();
-        _fillEvolutionTags();
+    var generateEvolutionMarkup = function(evolution_dict) {
+        _addEvolutionTags(evolution_dict);
+        _fillEvolutionTags(evolution_dict);
     }
 
     var fillPokedexList = function(allUsers) {
@@ -92,7 +97,7 @@ $(document).ready(function() {
             user.ability
         )
         setPortrait(user.id);
-        generateEvolutionMarkup();
+        generateEvolutionMarkup(user.evolution);
     }
 
     var alice = function() {
