@@ -133,8 +133,7 @@
         "move": {
             "1": "bother jason",
             "2": "send big ass code review",
-            "3": "drink bubble tea",
-            ""
+            "3": "drink bubble tea"
         }
     },
     "jmacdona": {
@@ -151,8 +150,7 @@
         "move": {
             "1": "roll back prod",
             "2": "teach alice javascript",
-            "3": "tell intern to go home",
-            ""
+            "3": "tell intern to go home"
         }
     },
     "toby": {
@@ -170,7 +168,6 @@
             "1": "ditch community for eat24",
             "2": "mentor jason",
             "3": "happy weekday everybody"
-            ""
         }
     },
     "bhargav": {

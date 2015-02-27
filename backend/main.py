@@ -5,6 +5,7 @@ from pymongo import MongoClient
 from validation.schema import add_person_schema
 from jsonschema import validate
 from jsonschema import ValidationError
+import operator
 
 
 app = Flask(__name__)
@@ -119,12 +120,12 @@ def reset():
     evolutions_collection.drop()
     evo_links = {}
     for identifier, person in everyone.iteritems():
-        evos = person['evolution'].values()
+        evos = sorted(person['evolution'].values(), key=operator.itemgetter(0))
         # make sure the person is in their own chain
         if identifier not in evos:
             continue
         if len(evos) > 1:
-            for i in range(0, len(evos)):
+            for i in range(len(evos)):
                 if i-1 >= 0:
                     fuck = evo_links.get(evos[i], {'after': set(), 'before': set()})
                     fuck['before'].add(evos[i-1])
