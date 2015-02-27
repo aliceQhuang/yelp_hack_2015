@@ -7,7 +7,7 @@ $(document).ready(function() {
         success: function(result) {
             allUsers = JSON.parse(result);
             fillPokedexList(allUsers);
-            fillPokedexContent(allUsers['jeremy']);
+            fillPokedexContent(allUsers['aliceqh']);
         }
     });
 
@@ -84,7 +84,7 @@ $(document).ready(function() {
         for (var move in moves) {
             if (moves.hasOwnProperty(move)) {
                 moveMarkup = moveMarkup.concat(
-                    '<b>Move ' + move + ':</b>&nbsp;&nbsp;&nbsp;',
+                    '<b>Move ' + move + ':</b>&nbsp;&nbsp;&nbsp;&nbsp;',
                     '<span id="move-' + move + '"></span><br/>'
                 );
             }
