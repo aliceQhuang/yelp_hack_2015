@@ -303,10 +303,11 @@ footer {
 }
 
 #pokedex-list {
-  width: 35%;
+  width: 30%;
   height: 100%;
   float: left;
   display: inline-block;
+  overflow: scroll;
   background-color: #de7b71;
 }
 
@@ -315,7 +316,7 @@ footer {
 }
 
 #pokedex-content {
-  width: 65%;
+  width: 70%;
   height: 100%;
   float: left;
   display: inline-block;
