@@ -18,11 +18,11 @@ $(document).ready(function() {
     var _addHeaderTags = function() {
         headerTags = [
             '<h4 style="font-size:24px"><span id="header-id"></span></h4>',
-            '<b>Region:&nbsp;&nbsp;</b>',
+            '<b>Region:&nbsp;&nbsp;&nbsp;</b>',
             '<span id="header-region"></span><br/>',
-            '<b>Type:&nbsp;&nbsp;</b>',
+            '<b>Type:&nbsp;&nbsp;&nbsp;</b>',
             '<span id="header-type"></span><br/>',
-            '<b>Ability:&nbsp;&nbsp;</b>',
+            '<b>Ability:&nbsp;&nbsp;&nbsp;</b>',
             '<span id="header-ability"></span><br/>',
         ].join('');
         $('.headers').html(headerTags);
@@ -49,9 +49,14 @@ $(document).ready(function() {
                     '<div class="arrow-image-1"></div>'
                 );
             }
-            else if (id > 2) {
+            else if (id == 3) {
                 evolutionTags = evolutionTags.concat(
                     '<div class="arrow-image-2"></div>'
+                );
+            }
+            else if (id >= 4) {
+                evolutionTags = evolutionTags.concat(
+                    '<div class="arrow-image-3"></div>'
                 );
             }
             evolutionTags = evolutionTags.concat(
@@ -79,8 +84,8 @@ $(document).ready(function() {
         for (var move in moves) {
             if (moves.hasOwnProperty(move)) {
                 moveMarkup = moveMarkup.concat(
-                    '<b>Move ' + move + '</b>',
-                    '<div id="move-' + move + '"></div><br/>'
+                    '<b>Move ' + move + ':</b>&nbsp;&nbsp;&nbsp;',
+                    '<span id="move-' + move + '"></span><br/>'
                 );
             }
         }
@@ -138,7 +143,24 @@ $(document).ready(function() {
         generateMoveMarkup(user.move);
     }
 
-    var alice = function() {
-
+    var blinkyblinky = function() {
+        var el = $('blink h6')[0]
+        if (el.style.visibility === 'visible') {
+            el.style.visibility = 'hidden';
+            el.style.color = getRandomColor()
+        } else {
+            el.style.visibility = 'visible';
+        }
     }
+
+    var getRandomColor = function() {
+        var letters = '0123456789ABCDEF'.split('');
+        var color = '#';
+        for (var i = 0; i < 6; i++ ) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+    setInterval(blinkyblinky, 250);
 });

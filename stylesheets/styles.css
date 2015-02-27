@@ -323,6 +323,7 @@ footer {
   display: inline-block;
   background-color: #f1cac6;
   color: #373535;
+  font-size: 15px;
 }
 
 .float-container {
@@ -387,6 +388,16 @@ footer {
   height: 40px;
   width: 40px;
   background-image: url("../images/gyarados.png");
+  border-radius: 50%;
+  background-size: cover;
+  display: inline-block;
+}
+
+.arrow-image-3 {
+  margin: 0 auto 10px auto;
+  height: 40px;
+  width: 40px;
+  background-image: url("../images/mega_gyarados.png");
   border-radius: 50%;
   background-size: cover;
   display: inline-block;
