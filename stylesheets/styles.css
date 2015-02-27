@@ -4,6 +4,9 @@
 @import url(http://fonts.googleapis.com/css?family=Calligraffitti); /*Calligraffitti*/
 @import url(http://fonts.googleapis.com/css?family=Cookie); /*Cookie*/
 @import url(http://fonts.googleapis.com/css?family=Parisienne); /*Parisienne*/
+@import url(http://fonts.googleapis.com/css?family=Pacifico); /*Pacifico*/
+@import url(http://fonts.googleapis.com/css?family=Indie+Flower); /*Indie Flower*/
+@import url(http://fonts.googleapis.com/css?family=Chewy); /*Chewy*/
 
 body {
   padding:26px;
@@ -14,7 +17,7 @@ body {
 }
 
 h6 {
-  font-family: 'Parisienne';
+  font-family: 'Chewy';
   color:#222;
   margin:0 0 1px;
   font-size:48px;
@@ -275,7 +278,7 @@ footer {
 }
 
 #pokedex {
-  border: 1px solid black;
+  border: 6px solid #727272;
   width: 640px;
   height: 600px;
 }
@@ -285,6 +288,7 @@ footer {
   height: 100%;
   float: left;
   display: inline-block;
+  background-color: #de7b71;
 }
 
 #pokedex-content {
@@ -292,26 +296,7 @@ footer {
   height: 100%;
   float: left;
   display: inline-block;
-}
-
-.color1 {
-  background-color: #C63D0F;
-}
-
-.color2 {
-  background-color: #FDF3E7;
-}
-
-.color3 {
-  background-color: #7E8F7C;
-}
-
-.color4 {
-  background-color: #3B3738;
-}
-
-.color5 {
-  background-color: #558C89;
+  background-color: #f1cac6;
 }
 
 .float-container {
