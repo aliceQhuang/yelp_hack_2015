@@ -1,6 +1,7 @@
-[
-    {   
+{
+    "jdtom": {   
         "name": "Jonathan Tom",
+        "id": "jdtom",
         "image": "jdtom.jpg",
         "region": "12",
         "type": "ad delivery",
@@ -8,8 +9,9 @@
             "nonono"
         ]   
     },  
-    {   
+    "bzhao": {   
         "name": "Brendan Zhao",
+        "id": "bzhao",
         "image": "bzhao.jpg",
         "region": "11",
         "type": "community",
@@ -17,8 +19,9 @@
             "python"
         ]   
     },  
-    {   
+    "aliceqh": {   
         "name": "Alice Huang",
+        "id": "aliceqh",
         "image": "aliceqh.jpg",
         "region": "14",
         "type": "i18n",
@@ -26,4 +29,4 @@
             "sucking dick"
         ]   
     }   
-]
+}

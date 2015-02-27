@@ -5,10 +5,20 @@ import json
 app = Flask(__name__)
 
 
-@app.route('/everyone')
-def poop():
+def get_everyone():
     with open('huehue.json', 'r') as f:
-        return f.read()
+        return json.loads(f.read())
+
+
+@app.route('/everyone')
+def everyone():
+    return json.dumps(get_everyone())
+
+
+@app.route('/person/<name>')
+def person(name):
+    everyone = get_everyone()
+    return json.dumps(everyone[name])
 
 
 if __name__ == '__main__':
