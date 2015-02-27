@@ -10,6 +10,13 @@ def get_everyone():
         return json.loads(f.read())
 
 
+@app.after_request
+def add_header(response):
+    # For ajax
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    return response
+
+
 @app.route('/everyone')
 def everyone():
     return json.dumps(get_everyone())
@@ -18,8 +25,14 @@ def everyone():
 @app.route('/person/<name>')
 def person(name):
     everyone = get_everyone()
-    return json.dumps(everyone[name])
+    response_body = json.dumps(everyone[name])
+    return response_body
+
+
+@app.route('/add')
+def add():
+    return 'asd'
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=19000)
+    app.run(host='0.0.0.0', port=19000, debug=True)
