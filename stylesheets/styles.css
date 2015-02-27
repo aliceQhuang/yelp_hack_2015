@@ -368,3 +368,7 @@ footer {
 .details {
   padding: 20px;
 }
+
+.subtitle {
+  display: inline-block;
+}
