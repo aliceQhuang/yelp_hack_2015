@@ -7,6 +7,9 @@
 @import url(http://fonts.googleapis.com/css?family=Pacifico); /*Pacifico*/
 @import url(http://fonts.googleapis.com/css?family=Indie+Flower); /*Indie Flower*/
 @import url(http://fonts.googleapis.com/css?family=Chewy); /*Chewy*/
+@import url(http://fonts.googleapis.com/css?family=Changa+One); /*Changa One*/
+@import url(http://fonts.googleapis.com/css?family=Crafty+Girls); /*Crafty Girls*/
+@import url(http://fonts.googleapis.com/css?family=Englebert); /*Englebert*/
 
 body {
   padding:26px;
@@ -16,6 +19,21 @@ body {
   background: #969696;
 }
 
+h4 {
+  font-family: 'Indie Flower';
+  color:#222;
+  margin:0 0 1px;
+  font-size:21px;
+}
+
+h5 {
+  font:14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  color:#222;
+  margin:0 0 1px;
+  font-size:15px;
+}
+
 h6 {
   font-family: 'Chewy';
   color:#222;
@@ -23,13 +41,13 @@ h6 {
   font-size:48px;
 }
 
-h1, h2, h3, h4, h5 {
+h1, h2, h3 {
   color:#222;
   margin:0 0 15px;
 }
 
 p, ul, ol, table, pre, dl {
-  margin:0 0 15px;
+  margin:0 0 10px;
 }
 
 h1, h2, h3 {
@@ -49,7 +67,8 @@ h3, h4, h5 {
 }
 
 a {
-  color:#ffdfe5;
+  color: #FFFFFF;
+  /*color:#ffdfe5;*/
   font-weight:400;
   text-decoration:none;
 }
@@ -301,6 +320,7 @@ footer {
   float: left;
   display: inline-block;
   background-color: #f1cac6;
+  color: #373535;
 }
 
 .float-container {
