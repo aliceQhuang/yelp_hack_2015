@@ -5,10 +5,12 @@
         "region": "12",
         "type": "ad delivery",
         "ability": "ex-asian",
-        "evolution": ["jdtom"],
-        "move": [
-            "nonono"
-        ]   
+        "evolution": {
+            "1": "jdtom"
+        },
+        "move": {
+            "1": "nonono"
+        }
     },  
     "bzhao": {   
         "name": "Brendan Zhao",
@@ -16,10 +18,12 @@
         "region": "11",
         "type": "community",
         "ability": "stiff breakdancing",
-        "evolution": ["bzhao"],
-        "move": [
-            "python"
-        ]   
+        "evolution": {
+            "1": "bzhao"
+        },
+        "move": {
+            "1": "python"
+        }
     },  
     "aliceqh": {   
         "name": "Alice Huang",
@@ -27,21 +31,25 @@
         "region": "14",
         "type": "i18n",
         "ability": "tease",
-        "evolution": ["aliceqh"],
-        "move": [
-            "sucking dick",
-            "i don't understand"
-        ]   
+        "evolution": {
+            "1": "aliceqh"
+        },
+        "move": {
+            "1": "sucking dick",
+            "2": "i don't understand"
+        }
     },   
     "jeremy": {   
         "name": "Jeremy Stoppelman",
         "id": "jeremy",
         "region": "13",
         "type": "legendary",
-        "evolution": ["jeremy"],
+        "evolution": {
+            "1": "jeremy"
+        },
         "ability": "jere-bear",
-        "move": [
-            "ceo"
-        ]   
+        "move": {
+            "1": "ceo"
+        }
     }   
 }
