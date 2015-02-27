@@ -6,7 +6,8 @@
         "type": "ad delivery",
         "ability": "ex-asian",
         "evolution": {
-            "1": "jdtom"
+            "1": "jdtom",
+            "2": "jeffseif"
         },
         "move": {
             "1": "nonono",
@@ -20,7 +21,9 @@
         "type": "community",
         "ability": "stiff breakdancing",
         "evolution": {
-            "1": "bzhao"
+            "1": "bzhao",
+            "2": "jmacdona",
+            "3": "toby"
         },
         "move": {
             "1": "python"
@@ -34,11 +37,12 @@
         "ability": "tease",
         "evolution": {
             "1": "aliceqh",
-            "2": "jeremy"
+            "2": "alanq"
         },
         "move": {
             "1": "sucking dick",
-            "2": "i don't understand"
+            "2": "i don't understand",
+            "3": "at LEAST seven    "
         }
     },   
     "jeremy": {   
@@ -53,5 +57,93 @@
         "move": {
             "1": "ceo"
         }
-    }   
+    },
+    "ivanlei": {
+        "name": "Ivan Leichtling",
+        "id": "ivanlei",
+        "region": "11",
+        "type": "security",
+        "ability": "1337 h@x0r",
+        "evolution": {
+            "1": "ivanlei"
+        },
+        "move": {
+            "1": "Hi, I'm Ivan from security",
+            "2": ">.>",
+            "3": "<.<",
+            "4": "<script>alert(0)</script>"
+        }
+    },
+    "duncan": {   
+        "name": "Duncan Cook",
+        "id": "duncan",
+        "region": "11",
+        "type": "seatme",
+        "ability": "rhyming",
+        "evolution": {
+            "1": "duncan",
+            "2": "derwiki",
+            "3": "emily"
+        },
+        "move": {
+            "1": "transform",
+            "2": "vomit",
+            "3": "office_reference",
+            "4": "casual_wink"
+        }
+    },
+    "tianyu": {
+        "name": "tianyu liu",
+        "id": "tianyu",
+        "region": "14",
+        "type": "biz",
+        "ability": "corndog",
+        "evolution": {
+            "1": "tianyu",
+            "2": "tamir",
+            "3": "edmund"
+        },
+        "move": {
+            "1": "moonwalk",
+            "2": "mock",
+            "3": "make ivan uncomfortable",
+            "4": "leave room"
+        }
+    },
+    "alanq": {
+        "name": "alan quach",
+        "id": "alanq",
+        "region": "14",
+        "type": "i18n",
+        "ability": "cool",
+        "evolution": {
+            "1": "alanq",
+            "2": "lukas",
+            "3": "mewtwo"
+        },
+        "move": {
+            "1": "dunk on chao",
+            "2": "eat a cake",
+            "3": "sleep until noon"
+        }
+    },
+    "amuller": {   
+        "name": "Alex Muller",
+        "id": "amuller",
+        "region": "12",
+        "type": "partnerships",
+        "ability": "wrestling",
+        "evolution": {
+            "1": "amuller",
+            "2": "yoann",
+            "3": "jfennell"
+        },
+        "move": {
+            "1": "Empty Inbox",
+            "2": "Open Ticket",
+            "3": "Rest",
+            "4": "Thunderbolt"
+        }
+    },
+    "bhargav": {"evolution": ["bhargav", "jrheard", "wing"], "ability": "secret taiko player", "region": "13", "move": {"0": "bhargav", "1": "jrheard", "2": "wing"}, "type": "consumer", "id": "bhargav", "name": "Bhargav Nookala"}, "clare": {"evolution": ["clare", "hsaxberg", "robb"], "ability": "Wait what?", "region": "??", "move": {"0": "clare", "1": "hsaxberg", "2": "robb"}, "type": "Revenue", "id": "clare", "name": "Clare Curtis"}, "rkwills": {"evolution": ["asottile", "buck", "kstruys"], "ability": "sleep", "region": "11", "move": {"0": "asottile", "1": "buck", "2": "kstruys"}, "type": "webcore", "id": "rkwills", "name": "Kent Wills"}, "aneeshg": {"evolution": ["aneeshg", "bchess", "???"], "ability": "Insomnia", "region": "12", "move": {"0": "aneeshg", "1": "bchess", "2": "???"}, "type": "Ads Backend", "id": "aneeshg", "name": "Aneesh Goel"}, "woods": {"evolution": ["woods", "dlants"], "ability": "nerfing", "region": "12", "move": {"0": "woods", "1": "dlants"}, "type": "search", "id": "woods", "name": "Michael Woods"}, "eliot": {"evolution": ["eliot", "jlee", "alexchao"], "ability": "sing", "region": "14", "move": {"0": "eliot", "1": "jlee", "2": "alexchao"}, "type": "biz", "id": "eliot", "name": "Eliot Alter"}, "ztm": {"evolution": ["ztm", "josnyder", "bigo"], "ability": "reaching things on high shelves", "region": "11", "move": {"0": "ztm", "1": "josnyder", "2": "bigo"}, "type": "tools-infra", "id": "ztm", "name": "Zach Musgrave"}, "wilson": {"evolution": ["wilson", "robb", "bill"], "ability": "Lindy Hop", "region": "14", "move": {"0": "wilson", "1": "robb", "2": "bill"}, "type": "Revenue", "id": "wilson", "name": "Scott Wilson"}, "hsaxberg": {"evolution": ["hsaxberg", "robb", "bhewitt"], "ability": "coworker noir fiction writing", "region": "14", "move": {"0": "hsaxberg", "1": "robb", "2": "bhewitt"}, "type": "revenue", "id": "hsaxberg", "name": "Haak Saxberg"}, "jwien": {"evolution": ["jwien", "jcontemp", "skimbrel"], "ability": "competitive", "region": "14", "move": {"0": "jwien", "1": "jcontemp", "2": "skimbrel"}, "type": "revenue", "id": "jwien", "name": "Josh Wien"}, "jgochman": {"evolution": ["jgochman", "allison"], "ability": "jive", "region": "13", "move": {"0": "jgochman", "1": "allison"}, "type": "design", "id": "jgochman", "name": "Jeffrey Gochman"}, "mbryant": {"evolution": ["mbryant", "jretz", "bchess?"], "ability": "Syzzurup", "region": "12", "move": {"0": "mbryant", "1": "jretz", "2": "bchess?"}, "type": "ads", "id": "mbryant", "name": "Michael Bryant"}, "tzhu": {"evolution": ["tzhu", "jlee", "alexchao"], "ability": "fotos", "region": "14", "move": {"0": "tzhu", "1": "jlee", "2": "alexchao"}, "type": "biz", "id": "tzhu", "name": "Timmy Zhu"}, "jcontemp": {"evolution": ["jcontemp", "skimbrel"], "ability": "HR violation", "region": "14", "move": {"0": "jcontemp", "1": "skimbrel"}, "type": "payments", "id": "jcontemp", "name": "Jeryl Contemprato"}, "dlants": {"evolution": ["gstarnbe", "jlynch"], "ability": "climb", "region": "12", "move": {"0": "gstarnbe", "1": "jlynch"}, "type": "search", "id": "dlants", "name": "Denis Lantsman"}, "jorge": {"evolution": ["jorge", "dpvlasov", "pwrice"], "ability": "speak Japanese", "region": "13", "move": {"0": "jorge", "1": "dpvlasov", "2": "pwrice"}, "type": "traffic", "id": "jorge", "name": "Jorge Blanco"}, "alext": {"evolution": ["alext", "yurym"], "ability": "OG Gameboy", "region": "14", "move": {"0": "alext", "1": "yurym"}, "type": "platform", "id": "alext", "name": "Alex Toumazis"}, "jimmyt": {"evolution": ["jimmyt", "raichu (requires Thunderstone)"], "ability": "hash extension", "region": "11", "move": {"0": "jimmyt", "1": "raichu (requires Thunderstone)"}, "type": "security", "id": "jimmyt", "name": "JimmyTang"}, "alexah": {"evolution": ["alexah", "stephenv"], "ability": "photoshopping", "region": "13", "move": {"0": "alexah", "1": "stephenv"}, "type": "design", "id": "alexah", "name": "Alexa Herasimchuk"}, "phphelps": {"evolution": ["heath", "rubyhelps"], "ability": "run", "region": "12", "move": {"0": "heath", "1": "rubyhelps"}, "type": "search", "id": "phphelps", "name": "Patrick Phelps"}, "connolly": {"evolution": ["connolly", "yoni", "eric"], "ability": "tap dance", "region": "13", "move": {"0": "connolly", "1": "yoni", "2": "eric"}, "type": "consumer", "id": "connolly", "name": "Lauren Connolly"}, "wing": {"evolution": ["wing", "stop", "neil"], "ability": "1-1s", "region": "13", "move": {"0": "wing", "1": "stop", "2": "neil"}, "type": "consumer/mobile/community", "id": "wing", "name": "Wing Yung"}
 }
