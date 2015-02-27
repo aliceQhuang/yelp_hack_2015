@@ -11,7 +11,8 @@ add_person_schema = {
             'properties': {
                 '1': {'type': 'string'},
                 '2': {'type': 'string'},
-                '3': {'type': 'string'}
+                '3': {'type': 'string'},
+                '4': {'type': 'string'}
             },
             'required': ['1']
         },

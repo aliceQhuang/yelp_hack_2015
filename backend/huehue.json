@@ -37,7 +37,9 @@
         "ability": "tease",
         "evolution": {
             "1": "aliceqh",
-            "2": "alanq"
+            "2": "alanq",
+            "3": "lukas",
+            "4": "mewtwo"
         },
         "move": {
             "1": "sucking dick",
@@ -45,19 +47,6 @@
             "3": "at LEAST seven    "
         }
     },   
-    "jeremy": {   
-        "name": "Jeremy Stoppelman",
-        "id": "jeremy",
-        "region": "13",
-        "type": "legendary",
-        "evolution": {
-            "1": "jeremy"
-        },
-        "ability": "jere-bear",
-        "move": {
-            "1": "ceo"
-        }
-    },
     "ivanlei": {
         "name": "Ivan Leichtling",
         "id": "ivanlei",

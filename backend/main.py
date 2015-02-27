@@ -10,7 +10,8 @@ from jsonschema import ValidationError
 app = Flask(__name__)
 client = MongoClient('10.255.55.16', 27017)
 db = client.dex
-people = db.people
+people_collection = db.people
+evolutions_collection = db.evolutions
 
 
 def get_everyone():
@@ -19,7 +20,7 @@ def get_everyone():
 
 
 def _verify_key(key):
-    return key in ('name', 'id', 'region', 'type', 'ability', 'evolution.1', 'evolution.2', 'evolution.3', 'move.1', 'move.2', 'move.3', 'move.4')
+    return key in ('name', 'id', 'region', 'type', 'ability', 'evolution.1', 'evolution.2', 'evolution.3', 'evolution.4', 'move.1', 'move.2', 'move.3', 'move.4')
 
 
 @app.after_request
@@ -29,9 +30,17 @@ def add_header(response):
     return response
 
 
+@app.route('/count')
+def hit_counter():
+    with open('hit_count', 'r') as f:
+        web_count = int(f.read())
+    web_count = web_count + 1
+    return str(web_count)
+
+
 @app.route('/everyone')
 def everyone():
-    results = people.find()
+    results = people_collection.find()
     response = {}
     for result in results:
         del result['_id']
@@ -42,7 +51,7 @@ def everyone():
 
 @app.route('/person/<name>')
 def person(name):
-    response = people.find_one({'id': name})
+    response = people_collection.find_one({'id': name})
     del response['_id']
     return json.dumps(response)
 
@@ -58,7 +67,7 @@ def add():
 
     try:
         validate(body, add_person_schema)
-        people.insert(body)
+        people_collection.insert(body)
         del body['_id']
         return json.dumps(body)
     except ValidationError:
@@ -76,17 +85,56 @@ def update(identifier):
             adjusted_params[k] = v
     for k, v in adjusted_params.iteritems():
         if v:
-            people.update({'id': identifier}, {'$set': {k: v}})
+            people_collection.update({'id': identifier}, {'$set': {k: v}})
         else:
-            people.update({'id': identifier}, {'$unset': {k: v}})
+            people_collection.update({'id': identifier}, {'$unset': {k: v}})
     return 'asd'
+
+
+@app.route('/evo')
+def evo_chain():
+    results = evolutions_collection.find()
+    response = {}
+    for result in results:
+        del result['_id']
+        identifier = result['id']
+        response[identifier] = result
+    return json.dumps(response, sort_keys=True)
 
 
 @app.route('/reset')
 def reset():
-    people.drop()
+    people_collection.drop()
     everyone = get_everyone()
-    people.insert(everyone.values())
+    people_collection.insert(everyone.values())
+
+    evolutions_collection.drop()
+    evo_links = {}
+    for identifier, person in everyone.iteritems():
+        evos = person['evolution']
+        for k, v in evos.iteritems():
+            if v == identifier:
+                fuck = evo_links.get(identifier, {'after': [], 'before': []})
+                # find after
+                evolution = str(int(k) + 1)
+                if evolution in evos:
+                    person_id = evos[evolution]
+                    fuck['after'].append(person_id)
+                # find before
+                evolution = str(int(k) - 1)
+                if evolution in evos:
+                    person_id = evos[evolution]
+                    fuck['before'].append(person_id)
+                evo_links[identifier] = fuck
+    formatted_links = []
+    for identifier, links in evo_links.iteritems():
+        formatted_links.append({
+            'id': identifier,
+            'after': links['after'],
+            'before': links['before'],
+        })
+    evolutions_collection.insert(formatted_links)
+
     return 'ok'
 
 
