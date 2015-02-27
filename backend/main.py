@@ -1,4 +1,5 @@
 from flask import Flask
+from flask import request
 import json
 from pymongo import MongoClient
 
@@ -37,6 +38,14 @@ def person(name):
     response = people.find_one({'id': name})
     del response['_id']
     return json.dumps(response)
+
+
+@app.route('/add', methods=['POST'])
+def add():
+    body = request.get_json(force=True)
+    if body:
+        people.insert(body)
+    return body
 
 
 @app.route('/reset')
