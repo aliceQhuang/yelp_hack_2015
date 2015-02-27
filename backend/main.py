@@ -1,8 +1,12 @@
 from flask import Flask
 import json
+from pymongo import MongoClient
 
 
 app = Flask(__name__)
+client = MongoClient('10.255.55.16', 27017)
+db = client.dex
+people = db.people
 
 
 def get_everyone():
@@ -19,19 +23,31 @@ def add_header(response):
 
 @app.route('/everyone')
 def everyone():
-    return json.dumps(get_everyone())
+    results = people.find()
+    response = {}
+    for result in results:
+        del result['_id']
+        identifier = result['id']
+        response[identifier] = result
+    return json.dumps(response)
 
 
 @app.route('/person/<name>')
 def person(name):
+    response = people.find_one({'id': name})
+    del response['_id']
+    return json.dumps(response)
+
+
+@app.route('/reset')
+def reset():
+    people.drop()
     everyone = get_everyone()
-    response_body = json.dumps(everyone[name])
-    return response_body
-
-
-@app.route('/add')
-def add():
-    return 'asd'
+    people.insert(everyone.values())
+    results = people.find()
+    for result in results:
+        print result
+    return 'ok'
 
 
 if __name__ == '__main__':
