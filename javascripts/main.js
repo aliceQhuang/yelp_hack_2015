@@ -147,8 +147,11 @@ $(document).ready(function() {
         var el = $('blink h6')[0]
         if (el.style.visibility === 'visible') {
             el.style.visibility = 'hidden';
-            el.style.color = getRandomColor()
+            el.style.color = getRandomColor();
+            el.style.transform = 'none';
         } else {
+            var a = Math.random() * 10 - 5;
+            el.style.transform = 'rotate(' + a + 'deg) scale(1.25)';
             el.style.visibility = 'visible';
         }
     }
