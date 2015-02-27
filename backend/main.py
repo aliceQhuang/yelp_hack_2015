@@ -2,6 +2,9 @@ from flask import Flask
 from flask import request
 import json
 from pymongo import MongoClient
+from validation.schema import add_person_schema
+from jsonschema import validate
+from jsonschema import ValidationError
 
 
 app = Flask(__name__)
@@ -47,10 +50,21 @@ def person(name):
 @app.route('/add', methods=['POST'])
 def add():
     body = request.get_json(force=True)
-    if body:
+    print json.dumps(body)
+    if not body:
+        return json.dumps({
+            'error': 'no data'
+        })
+
+    try:
+        validate(body, add_person_schema)
         people.insert(body)
-    del body['_id']
-    return json.dumps(body)
+        del body['_id']
+        return json.dumps(body)
+    except ValidationError:
+        return json.dumps({
+            'error': 'invalid schema'
+        })
 
 
 @app.route('/update/<identifier>')
@@ -73,7 +87,6 @@ def reset():
     people.drop()
     everyone = get_everyone()
     people.insert(everyone.values())
-    results = people.find()
     return 'ok'
 
 
