@@ -49,9 +49,14 @@ $(document).ready(function() {
                     '<div class="arrow-image-1"></div>'
                 );
             }
-            else if (id > 2) {
+            else if (id == 3) {
                 evolutionTags = evolutionTags.concat(
                     '<div class="arrow-image-2"></div>'
+                );
+            }
+            else if (id >= 4) {
+                evolutionTags = evolutionTags.concat(
+                    '<div class="arrow-image-3"></div>'
                 );
             }
             evolutionTags = evolutionTags.concat(
