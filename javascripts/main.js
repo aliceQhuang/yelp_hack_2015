@@ -60,6 +60,7 @@ $(document).ready(function() {
     var generateEvolutionMarkup = function(evolution_dict) {
         _addEvolutionTags(evolution_dict);
         _fillEvolutionTags(evolution_dict);
+    }
 
     var _addMoveTags = function(moves) {
         var moveMarkup = '';
