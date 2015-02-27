@@ -42,6 +42,23 @@ $(document).ready(function() {
         _fillHeaderTags(id, region, type, ability);
     }
 
+    var _addEvolutionTags = function() {
+        evolutionTags = [
+            '<div class="evolution-image" id="aliceqh"></div>'
+        ].join('');
+        $('.evolution-image-container').html(evolutionTags);
+    }
+
+    var _fillEvolutionTags = function() {
+        console.log('yo');
+        $('#aliceqh').css("background-image", ("url('images/people/" + "aliceqh" + ".jpg')"));
+    }
+
+    var generateEvolutionMarkup = function() {
+        _addEvolutionTags();
+        _fillEvolutionTags();
+    }
+
     var fillPokedexList = function(allUsers) {
         var listMarkup = '<h3>Pokemon List</h3>';
 
@@ -75,6 +92,7 @@ $(document).ready(function() {
             user.ability
         )
         setPortrait(user.id);
+        generateEvolutionMarkup();
     }
 
     var alice = function() {
