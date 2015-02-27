@@ -30,7 +30,7 @@ def everyone():
         del result['_id']
         identifier = result['id']
         response[identifier] = result
-    return json.dumps(response)
+    return json.dumps(response, sort_keys=True)
 
 
 @app.route('/person/<name>')
@@ -46,6 +46,22 @@ def add():
     if body:
         people.insert(body)
     return body
+
+
+@app.route('/update/<identifier>')
+def update(identifier):
+    params = request.args
+    adjusted_params = {}
+    for k, v in params.iteritems():
+        if k in ('name', 'id', 'region', 'type', 'ability', 'evolution.1', 'evolution.2', 'evolution.3', 'move.1', 'move.2', 'move.3', 'move.4'):
+            adjusted_params[k] = v
+    for k, v in adjusted_params.iteritems():
+        if v:
+            people.update({'id': identifier}, {'$set': {k: v}})
+        else:
+            people.update({'id': identifier}, {'$unset': {k: v}})
+    print params
+    return 'asd'
 
 
 @app.route('/reset')
