@@ -69,7 +69,7 @@ $(document).ready(function() {
             if (moves.hasOwnProperty(move)) {
                 moveMarkup = moveMarkup.concat(
                     '<b>Move ' + move + '</b>',
-                    '<div id="move-' + move + '"></div>'
+                    '<div id="move-' + move + '"></div><br/>'
                 );
             }
         }
