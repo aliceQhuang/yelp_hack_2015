@@ -56,6 +56,7 @@ $(document).ready(function() {
             var pokemon = $(event.target);
             var user = pokemon.data('user');
             fillPokedexContent(allUsers[user]);
+            alice();
         });
     }
 
@@ -69,6 +70,10 @@ $(document).ready(function() {
 
         $('.headers').html(headerMarkup);
         setPortrait(user.id);
+    }
+
+    var alice = function() {
+
     }
 
 });
