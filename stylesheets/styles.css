@@ -370,11 +370,21 @@ footer {
   display: inline-block;
 }
 
-.arrow-image {
+.arrow-image-1 {
   margin: 0 auto 10px auto;
   height: 40px;
   width: 40px;
   background-image: url("../images/magikarp.png");
+  border-radius: 50%;
+  background-size: cover;
+  display: inline-block;
+}
+
+.arrow-image-2 {
+  margin: 0 auto 10px auto;
+  height: 40px;
+  width: 40px;
+  background-image: url("../images/gyarados.png");
   border-radius: 50%;
   background-size: cover;
   display: inline-block;

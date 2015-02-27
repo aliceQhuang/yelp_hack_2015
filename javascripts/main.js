@@ -44,9 +44,14 @@ $(document).ready(function() {
         var evolutionTags = '';
 
         for (var id in evolution_dict) {
-            if (id > 1) {
+            if (id == 2) {
                 evolutionTags = evolutionTags.concat(
-                    '<div class="arrow-image"></div>'
+                    '<div class="arrow-image-1"></div>'
+                );
+            }
+            else if (id > 2) {
+                evolutionTags = evolutionTags.concat(
+                    '<div class="arrow-image-2"></div>'
                 );
             }
             evolutionTags = evolutionTags.concat(
