@@ -5,6 +5,7 @@ from pymongo import MongoClient
 from validation.schema import add_person_schema
 from jsonschema import validate
 from jsonschema import ValidationError
+import operator
 
 
 app = Flask(__name__)
@@ -12,6 +13,7 @@ client = MongoClient('10.255.55.16', 27017)
 db = client.dex
 people_collection = db.people
 evolutions_collection = db.evolutions
+random_shit = db.information
 
 
 def get_everyone():
@@ -32,9 +34,17 @@ def add_header(response):
 
 @app.route('/count')
 def hit_counter():
-    with open('hit_count', 'r') as f:
-        web_count = int(f.read())
+    web_count_doc = random_shit.find_one({'property': 'hit_count'})
+    if not web_count_doc:
+        random_shit.insert({
+            'property': 'hit_count',
+            'value': 1
+        })
+        web_count = 1
+    else:
+        web_count = web_count_doc['value']
     web_count = web_count + 1
+    random_shit.update({'property': 'hit_count'}, {'$set': {'value': web_count}})
     return str(web_count)
 
 
@@ -59,7 +69,6 @@ def person(name):
 @app.route('/add', methods=['POST'])
 def add():
     body = request.get_json(force=True)
-    print json.dumps(body)
     if not body:
         return json.dumps({
             'error': 'no data'
@@ -111,27 +120,26 @@ def reset():
     evolutions_collection.drop()
     evo_links = {}
     for identifier, person in everyone.iteritems():
-        evos = person['evolution']
-        for k, v in evos.iteritems():
-            if v == identifier:
-                fuck = evo_links.get(identifier, {'after': [], 'before': []})
-                # find after
-                evolution = str(int(k) + 1)
-                if evolution in evos:
-                    person_id = evos[evolution]
-                    fuck['after'].append(person_id)
-                # find before
-                evolution = str(int(k) - 1)
-                if evolution in evos:
-                    person_id = evos[evolution]
-                    fuck['before'].append(person_id)
-                evo_links[identifier] = fuck
+        evos = sorted(person['evolution'].values(), key=operator.itemgetter(0))
+        # make sure the person is in their own chain
+        if identifier not in evos:
+            continue
+        if len(evos) > 1:
+            for i in range(len(evos)):
+                if i-1 >= 0:
+                    fuck = evo_links.get(evos[i], {'after': set(), 'before': set()})
+                    fuck['before'].add(evos[i-1])
+                    evo_links[evos[i]] = fuck
+                if i+1 < len(evos):
+                    fuck = evo_links.get(evos[i], {'after': set(), 'before': set()})
+                    fuck['after'].add(evos[i+1])
+                    evo_links[evos[i]] = fuck
     formatted_links = []
     for identifier, links in evo_links.iteritems():
         formatted_links.append({
             'id': identifier,
-            'after': links['after'],
-            'before': links['before'],
+            'before': sorted(links['before']),
+            'after': sorted(links['after']),
         })
     evolutions_collection.insert(formatted_links)
 
