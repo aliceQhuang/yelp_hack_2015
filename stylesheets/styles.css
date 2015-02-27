@@ -307,7 +307,8 @@ footer {
   height: 100%;
   float: left;
   display: inline-block;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
   background-color: #de7b71;
 }
 
