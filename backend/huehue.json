@@ -2,9 +2,10 @@
     "jdtom": {   
         "name": "Jonathan Tom",
         "id": "jdtom",
-        "image": "jdtom.jpg",
         "region": "12",
         "type": "ad delivery",
+        "ability": "N",
+        "evolution": ["jdtom"],
         "move": [
             "nonono"
         ]   
@@ -12,9 +13,10 @@
     "bzhao": {   
         "name": "Brendan Zhao",
         "id": "bzhao",
-        "image": "bzhao.jpg",
         "region": "11",
         "type": "community",
+        "ability": "stiff breakdancing",
+        "evolution": ["bzhao"],
         "move": [
             "python"
         ]   
@@ -22,11 +24,24 @@
     "aliceqh": {   
         "name": "Alice Huang",
         "id": "aliceqh",
-        "image": "aliceqh.jpg",
         "region": "14",
         "type": "i18n",
+        "ability": "tease",
+        "evolution": ["aliceqh"],
         "move": [
-            "sucking dick"
+            "sucking dick",
+            "i don't understand"
+        ]   
+    },   
+    "jeremy": {   
+        "name": "Jeremy Stoppelman",
+        "id": "jeremy",
+        "region": "13",
+        "type": "legendary",
+        "evolution": ["jeremy"],
+        "ability": "jere-bear",
+        "move": [
+            "ceo"
         ]   
     }   
 }
