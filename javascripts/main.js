@@ -159,6 +159,7 @@ $(document).ready(function() {
             var a = Math.random() * 10 - 5;
             el.style.transform = 'rotate(' + a + 'deg) scale(1.25)';
             el.style.visibility = 'visible';
+            el.style['-webkit-transform'] = 'rotate(' + a + 'deg) scale(1.25)';
         }
     }
 
